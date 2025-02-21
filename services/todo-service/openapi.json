@@ -10,6 +10,12 @@
     },
     "version": "1.0.0"
   },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local development server"
+    }
+  ],
   "externalDocs": {
     "description": "Find out more about Swagger",
     "url": "http://swagger.io"
@@ -17,7 +23,7 @@
   "paths": {
     "/todo/{todoId}": {
       "get": {
-        "summary": "Find an Todo by ID",
+        "summary": "Find a Todo by ID",
         "description": "Returns a single todo",
         "operationId": "getTodoById",
         "parameters": [
@@ -64,9 +70,20 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Todo"
+              },
+              "examples": {
+                "validPayload": {
+                  "summary": "A valid payload for adding a new todo",
+                  "value": {
+                    "userId": 1,
+                    "title": "Buy groceries",
+                    "status": "pending"
+                  }
+                }
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -75,12 +92,23 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Todo"
+                },
+                "examples": {
+                  "successResponse": {
+                    "summary": "A successful response after adding a todo",
+                    "value": {
+                      "id": 1,
+                      "userId": 1,
+                      "title": "Buy groceries",
+                      "status": "pending"
+                    }
+                  }
                 }
               }
             }
           },
           "400": {
-            "description": "User Not Found",
+            "description": "Invalid Todo",
             "content": {}
           },
           "404": {
@@ -88,7 +116,39 @@
             "content": {}
           },
           "500": {
-            "description": "Unknown error occured",
+            "description": "Unknown error occurred",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/todo/{userId}": {
+      "delete": {
+        "summary": "Delete a Todo by User ID",
+        "description": "Deletes a todo associated with the given user ID",
+        "operationId": "deleteTodo",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "ID of the user whose todo should be deleted",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Todo deleted successfully",
+            "content": {}
+          },
+          "404": {
+            "description": "User or Todo not found",
+            "content": {}
+          },
+          "500": {
+            "description": "Unknown error occurred",
             "content": {}
           }
         }
@@ -99,7 +159,7 @@
     "schemas": {
       "Todo": {
         "type": "object",
-        "required": ["userId", "title"],
+        "required": ["userId", "title", "status"],
         "properties": {
           "id": {
             "type": "integer",
@@ -112,6 +172,10 @@
           "userId": {
             "type": "integer",
             "format": "int64"
+          },
+          "status": {
+            "type": "string",
+            "format": "string"
           }
         }
       }
