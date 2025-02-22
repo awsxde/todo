@@ -1,5 +1,5 @@
-import { logger } from '@practica/logger';
 import { AppError, errorHandler } from '@practica/error-handling';
+import { logger } from '@practica/logger';
 import { startWebServer } from './entry-points/api/server';
 
 async function start() {

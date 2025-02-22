@@ -6,7 +6,7 @@ generator client {
 datasource db {
   provider = "postgresql"
   // TODO: Extract the user/pass to env var asap before finalizing the PR
-  url      = "postgresql://postgres:password@localhost:5432/my_database?schema=public"
+  url      = "postgresql://myuser:mypassword@localhost:54320/todo-db?schema=public"
 }
 
 
