@@ -1,32 +1,30 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["metrics"]
 }
 
 datasource db {
   provider = "postgresql"
-  // TODO: Extract the user/pass to env var asap before finalizing the PR
-  url      = "postgresql://myuser:mypassword@localhost:54320/todo-db?schema=public"
+  url      = env("DATABASE_URL")
 }
 
-
 model User {
-  id                 Int        @id @default(autoincrement())
-  email              String     @unique
-  password           String
-  todos              Todo[]
-  createdAt          DateTime   @default(now())
-  updatedAt          DateTime   @updatedAt
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  todos     Todo[]
 }
 
 model Todo {
-  id                 Int        @id @default(autoincrement())
-  userId             Int
-  createdAt          DateTime   @default(now()) @db.Timestamptz(6)
-  updatedAt          DateTime   @default(now()) @db.Timestamptz(6)
-  user               User       @relation(fields: [userId], references: [id])
-  title              String
-  status             String
-  
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime @default(now()) @db.Timestamptz(6)
+  title     String
+  status    String
+  user      User     @relation(fields: [userId], references: [id])
+
   @@map("Todo")
 }

@@ -13,7 +13,7 @@ export function getPrismaClient() {
       'DB.password'
     )}@${configurationProvider.getValue(
       'DB.url'
-    )}:${configurationProvider.getValue('DB.port')}/todo?schema=public`;
+    )}:${configurationProvider.getValue('DB.port')}/todo-db?schema=public`;
     prismaClientInstance = new PrismaClient({
       datasources: {
         db: {
