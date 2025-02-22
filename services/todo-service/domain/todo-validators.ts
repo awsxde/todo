@@ -1,14 +1,14 @@
 import { AppError } from '@practica/error-handling';
 import ajv from '@practica/validation';
 import { ValidateFunction } from 'ajv';
-import { todoSchema, addTodoDTO } from './todo-schema';
+import { addTodoDTO, addTodoSchema } from './todo-schema';
 
 export function assertNewTodoIsValid(newTodoRequest: addTodoDTO) {
   // Since compiling a validation schema is expensive, we always try to use the cached version first
   let validationSchema!: ValidateFunction<addTodoDTO> | undefined;
   validationSchema = ajv.getSchema<addTodoDTO>('new-todo');
   if (!validationSchema) {
-    ajv.addSchema(todoSchema, 'new-todo');
+    ajv.addSchema(addTodoSchema, 'new-todo');
     validationSchema = ajv.getSchema<addTodoDTO>('new-todo');
   }
 
