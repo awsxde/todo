@@ -1,367 +1,0 @@
-
-> order-service@0.0.8 test
-> PRETTY_PRINT=true jest --forceExit --verbose=true --runInBand
-
-[1m[2mDetermining test suites to run...[22m[22mglobal-setup: 36.672ms
-[999D[K
-[K[1A[999D[K
-[K[1A[999D[K
-[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468039550,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","msg":"Starting the web server now"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468039820,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","msg":"Server listening at http://0.0.0.0:3000"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468039880,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-1","req":{"method":"POST","url":"/order","hostname":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":58551},"msg":"incoming request"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468039901,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"90583e5a-1d7d-45fc-a4e9-03a55f09e546","msg":"Order API was called to add new Order {\n  userId: 1,\n  productId: 2,\n  countryId: 1,\n  deliveryAddress: '123 Main St, New York, NY 10001',\n  paymentTermsInDays: 30\n}"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040523,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"90583e5a-1d7d-45fc-a4e9-03a55f09e546","msg":"Sequelize operation was just executed in 25 ms with sql: Executed (default): INSERT INTO \"Order\" (\"id\",\"deliveryAddress\",\"userId\",\"countryId\",\"paymentTermsInDays\",\"productId\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6,$7) RETURNING \"id\",\"deliveryAddress\",\"userId\",\"countryId\",\"paymentTermsInDays\",\"productId\",\"createdAt\",\"updatedAt\"; \"123 Main St, New York, NY 10001\", 1, 1, 30, 2, \"2024-04-07 05:34:00.174 +00:00\", \"2024-04-07 05:34:00.174 +00:00\""}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040525,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-1","res":{"statusCode":200},"responseTime":644.6599170044065,"msg":"request completed"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040529,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-2","req":{"method":"POST","url":"/order","hostname":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":58551},"msg":"incoming request"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040531,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"1123b058-7923-4177-8d08-275d467c6b2b","msg":"Order API was called to add new Order {\n  userId: 1,\n  productId: 2,\n  countryId: 1,\n  deliveryAddress: '123 Main St, New York, NY 10001',\n  paymentTermsInDays: 30\n}"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040554,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"1123b058-7923-4177-8d08-275d467c6b2b","msg":"Sequelize operation was just executed in 17 ms with sql: Executed (default): INSERT INTO \"Order\" (\"id\",\"deliveryAddress\",\"userId\",\"countryId\",\"paymentTermsInDays\",\"productId\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6,$7) RETURNING \"id\",\"deliveryAddress\",\"userId\",\"countryId\",\"paymentTermsInDays\",\"productId\",\"createdAt\",\"updatedAt\"; \"123 Main St, New York, NY 10001\", 1, 1, 30, 2, \"2024-04-07 05:34:00.537 +00:00\", \"2024-04-07 05:34:00.537 +00:00\""}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040555,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-2","res":{"statusCode":200},"responseTime":25.24024999886751,"msg":"request completed"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040556,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-3","req":{"method":"GET","url":"/order/6","hostname":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":58551},"msg":"incoming request"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040556,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"b7a9d524-e375-4599-a0a7-dbf27141d6ed","orderId":6,"msg":"Order API was called to get order by id"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040556,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"b7a9d524-e375-4599-a0a7-dbf27141d6ed","msg":"Getting order by id 6"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040564,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"b7a9d524-e375-4599-a0a7-dbf27141d6ed","msg":"Sequelize operation was just executed in 3 ms with sql: Executed (default): SELECT \"Order\".\"id\", \"Order\".\"deliveryAddress\", \"Order\".\"userId\", \"Order\".\"countryId\", \"Order\".\"paymentTermsInDays\", \"Order\".\"productId\", \"Order\".\"createdAt\", \"Order\".\"updatedAt\", \"Country\".\"id\" AS \"Country.id\", \"Country\".\"name\" AS \"Country.name\" FROM \"Order\" AS \"Order\" LEFT OUTER JOIN \"Country\" AS \"Country\" ON \"Order\".\"countryId\" = \"Country\".\"id\" WHERE \"Order\".\"id\" = 6;"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040565,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-3","res":{"statusCode":200},"responseTime":8.992334000766277,"msg":"request completed"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040566,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-4","req":{"method":"POST","url":"/order","hostname":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":58551},"msg":"incoming request"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A  [2mconsole.log[22m
-    middleware 1
-[2m[22m
-[2m      [2mat Object.fastifyErrorMiddleware ([22m[2m../../libraries/error-handling/.dist/fastify-error-middleware.js[2m:6:13)[22m[2m[22m
-
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040579,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"e613725f-e5df-4265-bbdb-961ebb19246d","msg":"Handling error1"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A  [2mconsole.log[22m
-    Handling error1
-[2m[22m
-[2m      [2mat Object.handleError ([22m[2m../../libraries/error-handling/.dist/error-handler.js[2m:28:21)[22m[2m[22m
-
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":50,"time":1712468040582,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"e613725f-e5df-4265-bbdb-961ebb19246d","name":"Error","HTTPStatus":400,"isCatastrophic":false,"statusCode":400,"code":"FST_ERR_VALIDATION","validation":[{"instancePath":"","schemaPath":"#/required","keyword":"required","params":{"missingProperty":"productId"},"message":"must have required property 'productId'"}],"validationContext":"body","msg":"body must have required property 'productId'"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A  [2mconsole.log[22m
-    Handling error2
-[2m[22m
-[2m      [2mat Object.handleError ([22m[2m../../libraries/error-handling/.dist/error-handler.js[2m:31:21)[22m[2m[22m
-
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040583,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"e613725f-e5df-4265-bbdb-961ebb19246d","msg":"Firing metric error with labels {\"errorName\":\"Error\"}"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A  [2mconsole.log[22m
-    middleware 2
-[2m[22m
-[2m      [2mat Object.fastifyErrorMiddleware ([22m[2m../../libraries/error-handling/.dist/fastify-error-middleware.js[2m:10:13)[22m[2m[22m
-
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040583,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-4","res":{"statusCode":400},"responseTime":17.238624997437,"msg":"request completed"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040585,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-5","req":{"method":"POST","url":"/order","hostname":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":58551},"msg":"incoming request"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040586,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"6510e57e-61e4-4464-84dc-a5e7a3bf6a88","msg":"Order API was called to add new Order {\n  userId: 7,\n  productId: 1,\n  countryId: 1,\n  deliveryAddress: '123 Main St, New York, NY 10001',\n  paymentTermsInDays: 30\n}"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A  [2mconsole.log[22m
-    middleware 1
-[2m[22m
-[2m      [2mat Object.fastifyErrorMiddleware ([22m[2m../../libraries/error-handling/.dist/fastify-error-middleware.js[2m:6:13)[22m[2m[22m
-
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040589,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"6510e57e-61e4-4464-84dc-a5e7a3bf6a88","msg":"Handling error1"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A  [2mconsole.log[22m
-    Handling error1
-[2m[22m
-[2m      [2mat Object.handleError ([22m[2m../../libraries/error-handling/.dist/error-handler.js[2m:28:21)[22m[2m[22m
-
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":50,"time":1712468040590,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"6510e57e-61e4-4464-84dc-a5e7a3bf6a88","name":"user-doesnt-exist","HTTPStatus":404,"isCatastrophic":false,"msg":"The user 7 doesnt exist"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A  [2mconsole.log[22m
-    Handling error2
-[2m[22m
-[2m      [2mat Object.handleError ([22m[2m../../libraries/error-handling/.dist/error-handler.js[2m:31:21)[22m[2m[22m
-
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040591,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"6510e57e-61e4-4464-84dc-a5e7a3bf6a88","msg":"Firing metric error with labels {\"errorName\":\"user-doesnt-exist\"}"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A  [2mconsole.log[22m
-    middleware 2
-[2m[22m
-[2m      [2mat Object.fastifyErrorMiddleware ([22m[2m../../libraries/error-handling/.dist/fastify-error-middleware.js[2m:10:13)[22m[2m[22m
-
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040592,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-5","res":{"statusCode":404},"responseTime":6.927874997258186,"msg":"request completed"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A[0m[7m[1m[32m PASS [39m[22m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m ([0m[1m[41m2.803 s[49m[22m[0m)
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A  /api
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A    POST /orders
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A      [32m✓[39m [2mWhen adding a new valid order, Then should get back approval with 200 response (706 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A      [32m✓[39m [2mWhen adding a new valid order, Then should be able to retrieve it (37 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A      [32m✓[39m [2mWhen adding an order without specifying product, stop and return 400 (19 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A      [32m✓[39m [2mWhen the user does not exist, return 404 response (9 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A      [35m✎[39m [2mtodo When a new order failed, an invalid-order error was handled[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A      [35m✎[39m [2mtodo When a new valid order was added, then order-added metric was fired[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A      [35m✎[39m [2mtodo When the user service is down, then order is still added successfully[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1madd-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040922,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","msg":"Starting the web server now"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040990,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","msg":"Server listening at http://0.0.0.0:3000"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468040999,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-1","req":{"method":"POST","url":"/order","hostname":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":58556},"msg":"incoming request"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041000,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"f7f75bb8-c405-4695-af8f-a1ad8ef2eff6","msg":"Order API was called to add new Order {\n  userId: 1,\n  productId: 2,\n  countryId: 1,\n  deliveryAddress: '123 Main St, New York, NY 10001',\n  paymentTermsInDays: 30\n}"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041080,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"f7f75bb8-c405-4695-af8f-a1ad8ef2eff6","msg":"Sequelize operation was just executed in 2 ms with sql: Executed (default): INSERT INTO \"Order\" (\"id\",\"deliveryAddress\",\"userId\",\"countryId\",\"paymentTermsInDays\",\"productId\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6,$7) RETURNING \"id\",\"deliveryAddress\",\"userId\",\"countryId\",\"paymentTermsInDays\",\"productId\",\"createdAt\",\"updatedAt\"; \"123 Main St, New York, NY 10001\", 1, 1, 30, 2, \"2024-04-07 05:34:01.038 +00:00\", \"2024-04-07 05:34:01.038 +00:00\""}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041080,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-1","res":{"statusCode":200},"responseTime":80.72741699963808,"msg":"request completed"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041081,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-2","req":{"method":"GET","url":"/order/7","hostname":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":58556},"msg":"incoming request"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041082,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"b439430c-a96c-4200-8409-fd6c1e7a0fb6","orderId":7,"msg":"Order API was called to get order by id"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041082,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"b439430c-a96c-4200-8409-fd6c1e7a0fb6","msg":"Getting order by id 7"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041085,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"b439430c-a96c-4200-8409-fd6c1e7a0fb6","msg":"Sequelize operation was just executed in 1 ms with sql: Executed (default): SELECT \"Order\".\"id\", \"Order\".\"deliveryAddress\", \"Order\".\"userId\", \"Order\".\"countryId\", \"Order\".\"paymentTermsInDays\", \"Order\".\"productId\", \"Order\".\"createdAt\", \"Order\".\"updatedAt\", \"Country\".\"id\" AS \"Country.id\", \"Country\".\"name\" AS \"Country.name\" FROM \"Order\" AS \"Order\" LEFT OUTER JOIN \"Country\" AS \"Country\" ON \"Order\".\"countryId\" = \"Country\".\"id\" WHERE \"Order\".\"id\" = 7;"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041086,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-2","res":{"statusCode":200},"responseTime":4.339958004653454,"msg":"request completed"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A[0m[7m[1m[32m PASS [39m[22m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m ([0m[1m[41m0.441 s[49m[22m[0m)
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A  /api
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A    GET /order
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A      [32m✓[39m [2mWhen asked for an existing order, Then should retrieve it and receive 200 response (95 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A      [33m○[39m [2mskipped When asked for an non-existing order, Then should receive 404 response[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mget-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041391,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","msg":"Starting the web server now"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041444,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","msg":"Server listening at http://0.0.0.0:3000"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041447,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-1","req":{"method":"POST","url":"/order","hostname":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":58559},"msg":"incoming request"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041447,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"1973470f-e8af-49a5-9b96-5f04bcc426d3","msg":"Order API was called to add new Order {\n  userId: 1,\n  productId: 2,\n  countryId: 1,\n  deliveryAddress: '123 Main St, New York, NY 10001',\n  paymentTermsInDays: 30\n}"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041502,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"1973470f-e8af-49a5-9b96-5f04bcc426d3","msg":"Sequelize operation was just executed in 2 ms with sql: Executed (default): INSERT INTO \"Order\" (\"id\",\"deliveryAddress\",\"userId\",\"countryId\",\"paymentTermsInDays\",\"productId\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6,$7) RETURNING \"id\",\"deliveryAddress\",\"userId\",\"countryId\",\"paymentTermsInDays\",\"productId\",\"createdAt\",\"updatedAt\"; \"123 Main St, New York, NY 10001\", 1, 1, 30, 2, \"2024-04-07 05:34:01.475 +00:00\", \"2024-04-07 05:34:01.475 +00:00\""}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041502,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-1","res":{"statusCode":200},"responseTime":55.62508299946785,"msg":"request completed"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041503,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-2","req":{"method":"DELETE","url":"/order/8","hostname":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":58559},"msg":"incoming request"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041504,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"f53912f7-be1a-48fd-a736-a712ff8ae031","orderId":8,"msg":"Order API was called to delete order"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041506,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"f53912f7-be1a-48fd-a736-a712ff8ae031","msg":"Sequelize operation was just executed in 1 ms with sql: Executed (default): DELETE FROM \"Order\" WHERE \"id\" = 8"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041506,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-2","res":{"statusCode":204},"responseTime":2.9922920018434525,"msg":"request completed"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041507,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-3","req":{"method":"GET","url":"/order/8","hostname":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":58559},"msg":"incoming request"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041507,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"f6537c5d-e940-43fc-b24d-a24ae2a71e19","orderId":8,"msg":"Order API was called to get order by id"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041507,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"f6537c5d-e940-43fc-b24d-a24ae2a71e19","msg":"Getting order by id 8"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041511,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","requestId":"f6537c5d-e940-43fc-b24d-a24ae2a71e19","msg":"Sequelize operation was just executed in 2 ms with sql: Executed (default): SELECT \"Order\".\"id\", \"Order\".\"deliveryAddress\", \"Order\".\"userId\", \"Order\".\"countryId\", \"Order\".\"paymentTermsInDays\", \"Order\".\"productId\", \"Order\".\"createdAt\", \"Order\".\"updatedAt\", \"Country\".\"id\" AS \"Country.id\", \"Country\".\"name\" AS \"Country.name\" FROM \"Order\" AS \"Order\" LEFT OUTER JOIN \"Country\" AS \"Country\" ON \"Order\".\"countryId\" = \"Country\".\"id\" WHERE \"Order\".\"id\" = 8;"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A{"level":30,"time":1712468041511,"pid":20686,"hostname":"Yonis-MacBook-Pro-2.local","reqId":"req-3","res":{"statusCode":404},"responseTime":4.219749994575977,"msg":"request completed"}
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A[0m[7m[1m[32m PASS [39m[22m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m ([0m[1m[41m0.427 s[49m[22m[0m)
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A  /api
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A    DELETE /order
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A      [32m✓[39m [2mWhen deleting an existing order, Then it should NOT be retrievable (68 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mdelete-order.test.ts[22m
-[K[1A[K[1A[999D[K[1m[7m[33m 0.7 s [39m[27m[22m /api POST /orders When adding a new valid order, Then should get back approval with 200 response
-----------------------------------------|---------|----------|---------|---------|-------------------
-File                                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------------------------------------|---------|----------|---------|---------|-------------------
-[32;1mAll files                              [0m | [32;1m  94.21[0m | [32;1m   85.36[0m | [32;1m  87.09[0m | [32;1m  94.21[0m | [31;1m                 [0m 
-[32;1m order-service                         [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m  config.ts                            [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m order-service/data-access             [0m | [32;1m  95.34[0m | [32;1m     100[0m | [33;1m     75[0m | [32;1m  95.34[0m | [31;1m                 [0m 
-[32;1m  order-repository.ts                  [0m | [32;1m  95.34[0m | [32;1m     100[0m | [33;1m     75[0m | [32;1m  95.34[0m | [31;1m42-43            [0m 
-[32;1m order-service/data-access/models      [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m  country-model.ts                     [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m  db-connection.ts                     [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m  order-model.ts                       [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m order-service/domain                  [0m | [32;1m  90.62[0m | [33;1m   78.57[0m | [32;1m    100[0m | [32;1m  90.62[0m | [31;1m                 [0m 
-[32;1m  new-order-use-case.ts                [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m  order-schema.ts                      [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[33;1m  order-validators.ts                  [0m | [33;1m  66.66[0m | [33;1m      50[0m | [32;1m    100[0m | [33;1m  66.66[0m | [31;1m16-22,25-26      [0m 
-[32;1m  payment-terms-service.ts             [0m | [32;1m    100[0m | [33;1m      50[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m4                [0m 
-[32;1m  user-service-client.ts               [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m order-service/entry-points-fastify/api[0m | [32;1m  96.17[0m | [32;1m   82.35[0m | [32;1m    100[0m | [32;1m  96.17[0m | [31;1m                 [0m 
-[32;1m  open-api-options.ts                  [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m  request-context.ts                   [0m | [32;1m  94.44[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m  94.44[0m | [31;1m10               [0m 
-[32;1m  routes.ts                            [0m | [32;1m  96.96[0m | [32;1m   83.33[0m | [32;1m    100[0m | [32;1m  96.96[0m | [31;1m50-52            [0m 
-[32;1m  server.ts                            [0m | [32;1m   94.8[0m | [32;1m      80[0m | [32;1m    100[0m | [32;1m   94.8[0m | [31;1m58-61            [0m 
-[33;1m order-service/test                    [0m | [33;1m  65.95[0m | [32;1m     100[0m | [31;1m     40[0m | [33;1m  65.95[0m | [31;1m                 [0m 
-[33;1m  test-helpers.ts                      [0m | [33;1m  65.95[0m | [32;1m     100[0m | [31;1m     40[0m | [33;1m  65.95[0m | [31;1m5-14,24-26,28-30 [0m 
-----------------------------------------|---------|----------|---------|---------|-------------------
-[1mTest Suites: [22m[1m[32m3 passed[39m[22m, 3 total
-[1mTests:       [22m[1m[33m1 skipped[39m[22m, [1m[35m3 todo[39m[22m, [1m[32m6 passed[39m[22m, 10 total
-[1mSnapshots:   [22m0 total
-[1mTime:[22m        3.796 s, estimated 5 s
-[2mRan all test suites[22m[2m.[22m
-[1mForce exiting Jest: [22mHave you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
