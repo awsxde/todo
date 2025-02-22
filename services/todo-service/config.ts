@@ -49,7 +49,7 @@ export default {
     port: {
       doc: 'The DB port',
       format: 'Number',
-      default: '54320',
+      default: '5432',
       nullable: false,
       env: 'DB_PORT',
     },

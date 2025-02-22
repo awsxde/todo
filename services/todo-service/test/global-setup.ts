@@ -1,13 +1,13 @@
+import { execSync } from 'child_process';
+import dockerCompose from 'docker-compose';
 import isPortReachable from 'is-port-reachable';
 import path from 'path';
-import dockerCompose from 'docker-compose';
-import { execSync } from 'child_process';
 
 export default async () => {
   console.time('global-setup');
 
   // ️️️✅ Best Practice: Speed up during development, if already live then do nothing
-  const isDBReachable = await isPortReachable(54320);
+  const isDBReachable = await isPortReachable(5432);
   if (!isDBReachable) {
     // ️️️✅ Best Practice: Start the infrastructure within a test hook - No failures occur because the DB is down
     await dockerCompose.upAll({
