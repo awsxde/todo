@@ -23,7 +23,7 @@ export default function defineRoutes(expressApp: express.Application) {
   // get existing todo by id
   router.get('/:id', async (req, res, next) => {
     try {
-      logger.info(`Todo API was called to get user by id ${req.params.id}`);
+      logger.info(`Todo API was called to get todo by id ${req.params.id}`);
       const result = await newTodoUseCase.getTodo(parseInt(req.params.id, 10));
 
       if (!result) {

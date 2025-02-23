@@ -14,11 +14,11 @@ export async function addTodo(newTodo: addTodoDTO) {
   return response;
 }
 
-export async function deleteTodo(userId) {
-  return await todoRepository.deleteTodo(userId);
+export async function deleteTodo(todoId) {
+  return await todoRepository.deleteTodo(todoId);
 }
 
-export async function getTodo(userId) {
-  const response = await todoRepository.getTodoById(userId);
+export async function getTodo(todoId) {
+  const response = await todoRepository.getTodoById(todoId);
   return response;
 }

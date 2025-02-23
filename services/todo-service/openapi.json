@@ -112,7 +112,7 @@
             "content": {}
           },
           "404": {
-            "description": "User Not Found",
+            "description": "Todo Not Found",
             "content": {}
           },
           "500": {
@@ -122,16 +122,16 @@
         }
       }
     },
-    "/todo/{userId}": {
+    "/todo/{id}": {
       "delete": {
-        "summary": "Delete a Todo by User ID",
-        "description": "Deletes a todo associated with the given user ID",
+        "summary": "Delete a Todo by ID",
+        "description": "Deletes a todo associated with the given ID",
         "operationId": "deleteTodo",
         "parameters": [
           {
-            "name": "userId",
+            "name": "id",
             "in": "path",
-            "description": "ID of the user whose todo should be deleted",
+            "description": "ID of the todo that should be deleted",
             "required": true,
             "schema": {
               "type": "integer"
@@ -144,7 +144,7 @@
             "content": {}
           },
           "404": {
-            "description": "User or Todo not found",
+            "description": "Todo not found",
             "content": {}
           },
           "500": {
