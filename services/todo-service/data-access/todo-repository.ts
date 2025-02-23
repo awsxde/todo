@@ -18,6 +18,15 @@ export async function addTodo(newTodoRequest: Omit<TodoRecord, 'id'>) {
   return resultTodo;
 }
 
+export async function updateTodo(updateTodoRequest: TodoRecord) {
+  const resultTodo = await getPrismaClient().todo.update({
+    where: { id: updateTodoRequest.id },
+    data: { ...updateTodoRequest },
+  });
+
+  return resultTodo;
+}
+
 export async function getTodoById(id: number) {
   const resultTodo = await getPrismaClient().todo.findUnique({
     where: {

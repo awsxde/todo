@@ -10,3 +10,5 @@ export const todoSchema = Type.Object({
 export const addTodoSchema = Type.Omit(todoSchema, ['id']);
 
 export type addTodoDTO = Static<typeof addTodoSchema>;
+
+export type updateTodoDTO = Static<typeof todoSchema>;
