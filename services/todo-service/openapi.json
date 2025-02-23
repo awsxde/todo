@@ -120,6 +120,32 @@
             "content": {}
           }
         }
+      },
+      "get": {
+        "summary": "List of Todos",
+        "description": "Returns all todos",
+        "operationId": "getTodos",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Todo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID",
+            "content": {}
+          },
+          "404": {
+            "description": "Todo not found",
+            "content": {}
+          }
+        }
       }
     },
     "/todo/{id}": {
