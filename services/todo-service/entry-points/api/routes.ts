@@ -1,6 +1,6 @@
-import util from 'util';
-import express from 'express';
 import { logger } from '@practica/logger';
+import express from 'express';
+import util from 'util';
 import * as newTodoUseCase from '../../domain/new-todo-use-case';
 
 export default function defineRoutes(expressApp: express.Application) {
