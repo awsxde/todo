@@ -55,6 +55,7 @@ docker-compose.override.yml
 
 # Coverage reports
 coverage/
+test-reports/
 
 # Miscellaneous
 *.bak
