@@ -57,68 +57,6 @@
             "content": {}
           }
         }
-      },
-      "put": {
-        "summary": "Update a Todo",
-        "description": "Returns a single todo",
-        "operationId": "updateTodo",
-        "requestBody": {
-          "description": "update a Todo",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Todo"
-              },
-              "examples": {
-                "validPayload": {
-                  "summary": "A valid payload for updating a todo",
-                  "value": {
-                    "id": 1,
-                    "userId": 1,
-                    "title": "Buy groceries",
-                    "status": "pending"
-                  }
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Todo"
-                },
-                "examples": {
-                  "successResponse": {
-                    "summary": "A successful response after adding a todo",
-                    "value": {
-                      "id": 1,
-                      "userId": 1,
-                      "title": "Buy groceries",
-                      "status": "pending"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid Todo",
-            "content": {}
-          },
-          "404": {
-            "description": "Todo Not Found",
-            "content": {}
-          },
-          "500": {
-            "description": "Unknown error occurred",
-            "content": {}
-          }
-        }
       }
     },
     "/todo": {
@@ -205,6 +143,68 @@
           },
           "404": {
             "description": "Todo not found",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a Todo",
+        "description": "Returns a single todo",
+        "operationId": "updateTodo",
+        "requestBody": {
+          "description": "update a Todo",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Todo"
+              },
+              "examples": {
+                "validPayload": {
+                  "summary": "A valid payload for updating a todo",
+                  "value": {
+                    "id": 1,
+                    "userId": 1,
+                    "title": "Buy groceries",
+                    "status": "pending"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Todo"
+                },
+                "examples": {
+                  "successResponse": {
+                    "summary": "A successful response after adding a todo",
+                    "value": {
+                      "id": 1,
+                      "userId": 1,
+                      "title": "Buy groceries",
+                      "status": "pending"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Todo",
+            "content": {}
+          },
+          "404": {
+            "description": "Todo Not Found",
+            "content": {}
+          },
+          "500": {
+            "description": "Unknown error occurred",
             "content": {}
           }
         }
