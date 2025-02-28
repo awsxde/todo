@@ -87,7 +87,20 @@ describe('/api', () => {
       });
     });
 
-    test.todo('When user exist, throw error on sign up');
+    test('When user exist, throw error on sign up', async () => {
+      // Arrange
+      const userToAdd = {
+        email: 'test3@gmail.com',
+        password: 'StrongPass123!',
+      };
+
+      // Act
+      await axiosAPIClient.post('/user', userToAdd);
+      const receivedAPIResponse = await axiosAPIClient.post('/user', userToAdd);
+
+      // Assert
+      expect(receivedAPIResponse.status).toBe(400);
+    });
 
     describe('Password Validation', () => {
       test('should return 200 when user password meets strong password requirements', async () => {
