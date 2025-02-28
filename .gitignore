@@ -69,4 +69,4 @@ test-reports/
 /.pnp
 .pnp.js
 
-openapi.json
+**/openapi.json
