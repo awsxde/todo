@@ -68,3 +68,5 @@ test-reports/
 .eslintcache/
 /.pnp
 .pnp.js
+
+openapi.json
