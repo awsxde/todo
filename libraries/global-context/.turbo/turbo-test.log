@@ -1,50 +1,0 @@
-
-> @practica/global-context@0.1.0 test
-> jest --runInBand
-
-[1m[2mDetermining test suites to run...[22m[22m[999D[K
-[K[1A[999D[K
-[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mrequest-context.test.ts[22m
-[K[1A[K[1Ats-jest[versions] (WARN) Version 5.2.2 of typescript installed has not been tested with ts-jest. If you're experiencing issues, consider using a supported version (>=4.3.0 <5.0.0-0). Please do not report issues in ts-jest if you are using unsupported versions.
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mrequest-context.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mrequest-context.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mrequest-context.test.ts[22m
-[K[1A[K[1A[0m[7m[1m[32m PASS [39m[22m[27m[0m [2mtest/[22m[1mrequest-context.test.ts[22m ([0m[1m[41m8.687 s[49m[22m[0m)
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mrequest-context.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mrequest-context.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2m.dist/test/[22m[1mrequest-context.test.js[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2m.dist/test/[22m[1mrequest-context.test.js[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2m.dist/test/[22m[1mrequest-context.test.js[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2m.dist/test/[22m[1mrequest-context.test.js[22m
-[K[1A[K[1A[0m[7m[1m[32m PASS [39m[22m[27m[0m [2m.dist/test/[22m[1mrequest-context.test.js[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2m.dist/test/[22m[1mrequest-context.test.js[22m
-[K[1A[K[1A[999D[K--------------------------|---------|----------|---------|---------|-------------------
-File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------------|---------|----------|---------|---------|-------------------
-[32;1mAll files                [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m global-context          [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m  index.ts               [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m global-context/.dist    [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m  index.js               [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m global-context/.dist/src[0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m  context.js             [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m global-context/src      [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
-[32;1m  context.ts             [0m | [32;1m    100[0m | [32;1m     100[0m | [32;1m    100[0m | [32;1m    100[0m | [33;1m                 [0m 
---------------------------|---------|----------|---------|---------|-------------------
-
-[1mTest Suites: [22m[1m[32m2 passed[39m[22m, 2 total
-[1mTests:       [22m[1m[32m4 passed[39m[22m, 4 total
-[1mSnapshots:   [22m0 total
-[1mTime:[22m        [1m[33m9.402 s[39m[22m
-[2mRan all test suites[22m[2m.[22m

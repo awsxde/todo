@@ -20,7 +20,7 @@ export default function defineRoutes(expressApp: express.Application) {
     }
   });
 
-  router.put('/:id', async (req, res, next) => {
+  router.put('/', async (req, res, next) => {
     try {
       logger.info(
         `Todo API was called to update a Todo ${util.inspect(req.body)}`

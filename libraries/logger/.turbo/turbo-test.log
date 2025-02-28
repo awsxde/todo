@@ -1,81 +1,0 @@
-
-> @practica/logger@0.0.5 test
-> jest --forceExit
-
-[1m[2mDetermining test suites to run...[22m[22m[999D[K
-[K[1A[999D[K
-[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1Ats-jest[ts-jest-transformer] (WARN) Got a `.js` file to compile while `allowJs` option is not set to `true` (file: /Users/goldbergyoni/solutions/practica/src/code-templates/libraries/global-context/.dist/index.js). To fix this:
-  - if you want TypeScript to process JS files, set `allowJs` to `true` in your TypeScript config (usually tsconfig.json)
-  - if you do not want TypeScript to process your `.js` files, in your Jest config change the `transform` key which value is `ts-jest` so that it does not match `.js` files anymore
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1Ats-jest[ts-jest-transformer] (WARN) Got a `.js` file to compile while `allowJs` option is not set to `true` (file: /Users/goldbergyoni/solutions/practica/src/code-templates/libraries/global-context/.dist/src/context.js). To fix this:
-  - if you want TypeScript to process JS files, set `allowJs` to `true` in your TypeScript config (usually tsconfig.json)
-  - if you do not want TypeScript to process your `.js` files, in your Jest config change the `transform` key which value is `ts-jest` so that it does not match `.js` files anymore
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A[0m[7m[1m[32m PASS [39m[22m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A  logger
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A    [32m✓[39m [2mWhen no explicit configuration is set, info logs are written (4 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A    [32m✓[39m [2mWhen log level is DEBUG and logger emits INFO statement, then stdout contains the entry (1 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A    [32m✓[39m [2mWhen logger is configured and then re-configured, then the new config applies[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A    [32m✓[39m [2mWhen log level is ERROR and logger emits INFO statement, then nothing is written (1 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A    [32m✓[39m [2mWhen configuring for pretty-print, then its written to stdout[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A    [32m✓[39m [2mit should print the passed metadata[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A    context
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A      [32m✓[39m [2mit should print the current context (1 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A      [32m✓[39m [2mit should merge with current context (3 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A      [32m✓[39m [2mit should override current context (1 ms)[22m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2mtest/[22m[1mindex.test.ts[22m
-[K[1A[K[1A[999D[K[1mTest Suites: [22m[1m[32m1 passed[39m[22m, 1 total
-[1mTests:       [22m[1m[32m9 passed[39m[22m, 9 total
-[1mSnapshots:   [22m0 total
-[1mTime:[22m        4.108 s
-[2mRan all test suites[22m[2m.[22m
-[1mForce exiting Jest: [22mHave you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
