@@ -17,10 +17,8 @@ function internalSignTokenSynchronously(user, roles, expirationInUnixTime) {
         roles,
       },
     },
-    exampleSecret
+    process.env.SECRET_KEY || 'just-a-default-secret'
   );
 
   return token;
 }
-
-export const exampleSecret = 'just-a-default-secret';
