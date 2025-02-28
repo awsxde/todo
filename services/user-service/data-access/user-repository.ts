@@ -26,6 +26,16 @@ export async function updateUser(updateUserRequest: UserRecord) {
   return resultUser;
 }
 
+export async function getUserByEmail(email: string) {
+  const resultUser = await getPrismaClient().user.findUnique({
+    where: {
+      email,
+    },
+  });
+
+  return resultUser;
+}
+
 export async function getUserById(id: number) {
   const resultUser = await getPrismaClient().user.findUnique({
     where: {

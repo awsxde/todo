@@ -204,6 +204,63 @@
         }
       }
     },
+    "/user/login": {
+      "post": {
+        "summary": "login as a User",
+        "description": "Returns a toke",
+        "operationId": "loginUser",
+        "requestBody": {
+          "description": "Login as a User",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "validPayload": {
+                  "summary": "A valid payload for login as a user",
+                  "value": {
+                    "email": "test@gmail.com",
+                    "password": "password"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "successResponse": {
+                    "summary": "A successful response after adding a user",
+                    "value": "<a valid token>"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid User",
+            "content": {}
+          },
+          "404": {
+            "description": "User Not Found",
+            "content": {}
+          },
+          "500": {
+            "description": "Unknown error occurred",
+            "content": {}
+          }
+        }
+      }
+    },
     "/user/{id}": {
       "delete": {
         "summary": "Delete a User by ID",

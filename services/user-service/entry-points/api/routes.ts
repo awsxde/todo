@@ -20,6 +20,19 @@ export default function defineRoutes(expressApp: express.Application) {
     }
   });
 
+  router.post('/login', async (req, res, next) => {
+    try {
+      logger.info(
+        `User API was called to login as a User ${util.inspect(req.body)}`
+      );
+      const loginUserResponse = await newUserUseCase.loginUser(req.body);
+      return res.json(loginUserResponse);
+    } catch (error) {
+      next(error);
+      return undefined;
+    }
+  });
+
   router.put('/', async (req, res, next) => {
     try {
       logger.info(

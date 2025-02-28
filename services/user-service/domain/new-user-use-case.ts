@@ -1,7 +1,9 @@
+import { AppError } from '@practica/error-handling';
 import * as userRepository from '../data-access/user-repository';
 import { signValidToken } from './sign-token';
-import { addUserDTO, updateUserDTO } from './user-schema';
+import { addUserDTO, loginUserDTO, updateUserDTO } from './user-schema';
 import {
+  assertLoginUserIsValid,
   assertNewUserIsValid,
   assertUpdateUserIsValid,
 } from './user-validators';
@@ -12,9 +14,8 @@ export async function addUser(newUser: addUserDTO) {
   assertNewUserIsValid(newUser);
   const finalUserToSave = { ...newUser };
   const response = await userRepository.addUser(finalUserToSave);
-  const token = signValidToken(response, 'user');
 
-  return token;
+  return response;
 }
 
 export async function updateUser(user: updateUserDTO) {
@@ -24,6 +25,21 @@ export async function updateUser(user: updateUserDTO) {
   const response = await userRepository.updateUser(finalUserToSave);
 
   return response;
+}
+
+export async function loginUser(credentials: loginUserDTO) {
+  assertLoginUserIsValid(credentials);
+  // const userWhoLoggedIn = await assertUserExists(credentials.email);
+  const user = await userRepository.getUserByEmail(credentials.email);
+  const isPasswordValid = credentials.password === user!.password;
+
+  if (!isPasswordValid) {
+    throw new AppError('invalid-password', `invalid password`, 401, false);
+  }
+
+  const token = signValidToken(user, 'user');
+
+  return token;
 }
 
 export async function deleteUser(userId) {
