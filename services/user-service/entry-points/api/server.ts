@@ -1,14 +1,14 @@
-import { Server } from 'http';
+import {
+  addRequestId,
+  jwtVerifierMiddleware,
+} from '@practica/common-express-middlewares';
+import * as configurationProvider from '@practica/configuration-provider';
+import { errorHandler } from '@practica/error-handling';
 import { logger } from '@practica/logger';
-import { AddressInfo } from 'net';
 import express from 'express';
 import helmet from 'helmet';
-import { errorHandler } from '@practica/error-handling';
-import * as configurationProvider from '@practica/configuration-provider';
-import {
-  jwtVerifierMiddleware,
-  addRequestId,
-} from '@practica/common-express-middlewares';
+import { Server } from 'http';
+import { AddressInfo } from 'net';
 import configurationSchema from '../../config';
 import defineRoutes from './routes';
 
@@ -49,11 +49,24 @@ function defineCommonMiddlewares(expressApp: express.Application) {
   expressApp.use(helmet());
   expressApp.use(express.urlencoded({ extended: true }));
   expressApp.use(express.json());
-  expressApp.use(
+
+  // Apply JWT middleware only if the route is not in the exempt list
+  expressApp.use((req, res, next) => {
+    const publicRoutes = [
+      { path: '/user', method: 'POST' },
+      { path: '/user/login', method: 'POST' },
+    ];
+
+    const isPublic = publicRoutes.some(
+      (route) => req.path === route.path && req.method === route.method
+    );
+
+    if (isPublic) return next(); // Skip authentication for this route
+
     jwtVerifierMiddleware({
       secret: configurationProvider.getValue('jwtTokenSecret'),
-    })
-  );
+    });
+  });
 }
 
 async function openConnection(
