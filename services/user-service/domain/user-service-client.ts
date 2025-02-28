@@ -1,7 +1,7 @@
 import { AppError } from '@practica/error-handling';
-import { getUserByEmail } from '../data-access/user-repository';
+import { getUserByEmail, getUserById } from '../data-access/user-repository';
 
-export async function assertUserExists(email: string) {
+export async function assertEmailExists(email: string) {
   const user = await getUserByEmail(email);
 
   if (!user) {
@@ -16,7 +16,7 @@ export async function assertUserExists(email: string) {
   return user;
 }
 
-export async function assertUserDoesNotExists(email: string) {
+export async function assertEmailDoesNotExists(email: string) {
   const user = await getUserByEmail(email);
 
   if (user) {
@@ -24,6 +24,21 @@ export async function assertUserDoesNotExists(email: string) {
       'user-already-exists',
       `The user with email ${email} already exists`,
       400,
+      false
+    );
+  }
+
+  return user;
+}
+
+export async function assertIdExists(id: number) {
+  const user = await getUserById(id);
+
+  if (!user) {
+    throw new AppError(
+      'user-does-not-exist',
+      `The user with id ${id} does not exist`,
+      404,
       false
     );
   }
