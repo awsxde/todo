@@ -33,34 +33,6 @@ beforeEach(() => {
   sinon.restore();
 });
 
-afterEach(async () => {
-  try {
-    // Fetch all users
-    const usersResponse = await axiosAPIClient.get('/user');
-    console.log('Users response:', usersResponse.data);
-
-    const lastUser = usersResponse.data.at(-1);
-
-    if (!lastUser) {
-      console.log('No users found to delete.');
-      return;
-    }
-
-    console.log(`User with id ${lastUser.id} is going to be deleted!`);
-
-    // Delete the last user
-    const deleteResponse = await axiosAPIClient.delete(`/users/${lastUser.id}`);
-
-    if (deleteResponse.status === 200) {
-      console.log(`User with id ${lastUser.id} was deleted!`);
-    } else {
-      console.error('Failed to delete user:', deleteResponse.data);
-    }
-  } catch (error) {
-    console.error('Error in afterEach hook:', error);
-  }
-});
-
 afterAll(async () => {
   nock.enableNetConnect();
   stopWebServer();
@@ -73,7 +45,7 @@ describe('/api', () => {
     test('When adding a new valid user, Then should get back approval with 200 response', async () => {
       // Arrange
       const userToAdd = {
-        email: 'test@gmail.com',
+        email: 'test1@gmail.com',
         password: 'StrongPass123!',
       };
 
@@ -93,7 +65,7 @@ describe('/api', () => {
     test('When adding a new valid user, Then should be able to retrieve it', async () => {
       // Arrange
       const userToAdd = {
-        email: 'test@gmail.com',
+        email: 'test2@gmail.com',
         password: 'StrongPass123!',
       };
 
@@ -121,7 +93,7 @@ describe('/api', () => {
       test('should return 200 when user password meets strong password requirements', async () => {
         // Arrange
         const userToAdd = {
-          email: 'test@gmail.com',
+          email: 'test4@gmail.com',
           password: 'StrongPass123!',
         };
 
@@ -138,7 +110,7 @@ describe('/api', () => {
       test('should return 400 when user password does not meet strong password requirements', async () => {
         // Arrange
         const userToAdd = {
-          email: 'test@gmail.com',
+          email: 'test5@gmail.com',
           password: 'weak',
         };
 
@@ -157,7 +129,7 @@ describe('/api', () => {
       test('should return 200 when user email meets a valid email requirements', async () => {
         // Arrange
         const userToAdd = {
-          email: 'test@gmail.com',
+          email: 'test6@gmail.com',
           password: 'StrongPass123!',
         };
 
