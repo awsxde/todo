@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: User API
+  description: API for user management
+  version: 1.0.0
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: http://localhost:3001
+    description: Local development server
+paths:
+  /user:
+    get:
+      operationId: getAllUsers
+      summary: Get all users
+      description: Retrieves a list of all users.
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: User list sended successfully.
+    post:
+      operationId: addUser
+      summary: Add a new user
+      description: Adds a new user to the system.
+      responses:
+        '201':
+          description: User created successfully.
+        '400':
+          description: Invalid input.
+    put:
+      operationId: updateUser
+      summary: Update a user
+      description: Updates an existing user.
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: User updated successfully.
+        '404':
+          description: User not found.
+  /user/{id}:
+    delete:
+      operationId: deleteUser
+      summary: Delete a user
+      description: Deletes a user by ID.
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User deleted successfully.
+        '404':
+          description: User not found.
+  /user/login:
+    post:
+      operationId: loginUser
+      summary: Login a user
+      description: Authenticates a user and returns a token.
+      responses:
+        '200':
+          description: Authentication successful.
+        '401':
+          description: Unauthorized.
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
