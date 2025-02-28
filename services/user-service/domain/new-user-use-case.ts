@@ -2,6 +2,7 @@ import { AppError } from '@practica/error-handling';
 import * as userRepository from '../data-access/user-repository';
 import { signValidToken } from './sign-token';
 import { addUserDTO, loginUserDTO, updateUserDTO } from './user-schema';
+import { assertUserExists } from './user-service-client';
 import {
   assertLoginUserIsValid,
   assertNewUserIsValid,
@@ -12,6 +13,7 @@ import {
 // It should merely tell the feature story without too much information. Kind of a 'yellow pages' of the module
 export async function addUser(newUser: addUserDTO) {
   assertNewUserIsValid(newUser);
+  await assertUserDoesNotExists(newUser.email);
   const finalUserToSave = { ...newUser };
   const response = await userRepository.addUser(finalUserToSave);
 
@@ -20,7 +22,7 @@ export async function addUser(newUser: addUserDTO) {
 
 export async function updateUser(user: updateUserDTO) {
   assertUpdateUserIsValid(user);
-  // const userWhoUpdated = await assertUserExists(user.id);
+  await assertUserExists(user.email);
   const finalUserToSave = { ...user };
   const response = await userRepository.updateUser(finalUserToSave);
 
@@ -29,7 +31,7 @@ export async function updateUser(user: updateUserDTO) {
 
 export async function loginUser(credentials: loginUserDTO) {
   assertLoginUserIsValid(credentials);
-  // const userWhoLoggedIn = await assertUserExists(credentials.email);
+  await assertUserExists(credentials.email);
   const user = await userRepository.getUserByEmail(credentials.email);
   const isPasswordValid = credentials.password === user!.password;
 
