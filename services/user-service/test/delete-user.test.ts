@@ -50,14 +50,16 @@ describe('/api', () => {
       // Act
       const receivedAPIResponse = await axiosAPIClient.post('/user', userToAdd);
       const user = receivedAPIResponse.data;
-
-      // Act
       await axiosAPIClient.delete(`/user/${user.id}`);
 
       // Assert
       const aQueryForDeletedUser = await axiosAPIClient.get(`/user/${user.id}`);
       expect(aQueryForDeletedUser.status).toBe(404);
     });
+
+    test.todo(
+      'When deleting an non-existing user, Then should receive 404 response'
+    );
   });
 });
 
