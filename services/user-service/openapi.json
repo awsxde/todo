@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Todo",
-    "description": "This is the API docs of the todo API.",
+    "title": "User",
+    "description": "This is the API docs of the user API.",
     "termsOfService": "http://swagger.io/terms/",
     "license": {
       "name": "Apache 2.0",
@@ -12,7 +12,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000",
+      "url": "http://localhost:3001",
       "description": "Local development server"
     }
   ],
@@ -21,16 +21,16 @@
     "url": "http://swagger.io"
   },
   "paths": {
-    "/todo/{todoId}": {
+    "/user/{userId}": {
       "get": {
-        "summary": "Find a Todo by ID",
-        "description": "Returns a single todo",
-        "operationId": "getTodoById",
+        "summary": "Find a User by ID",
+        "description": "Returns a single user",
+        "operationId": "getUserById",
         "parameters": [
           {
-            "name": "todoId",
+            "name": "userId",
             "in": "path",
-            "description": "ID of todo to return",
+            "description": "ID of user to return",
             "required": true,
             "schema": {
               "type": "integer"
@@ -43,7 +43,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Todo"
+                  "$ref": "#/components/schemas/User"
                 }
               }
             }
@@ -53,31 +53,30 @@
             "content": {}
           },
           "404": {
-            "description": "Todo not found",
+            "description": "User not found",
             "content": {}
           }
         }
       }
     },
-    "/todo": {
+    "/user": {
       "post": {
-        "summary": "Add a new Todo",
-        "description": "Returns a single todo",
-        "operationId": "addTodo",
+        "summary": "Add a new User",
+        "description": "Returns a single user",
+        "operationId": "addUser",
         "requestBody": {
-          "description": "New Todo To Add",
+          "description": "New User To Add",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Todo"
+                "$ref": "#/components/schemas/User"
               },
               "examples": {
                 "validPayload": {
-                  "summary": "A valid payload for adding a new todo",
+                  "summary": "A valid payload for adding a new user",
                   "value": {
-                    "userId": 1,
-                    "title": "Buy groceries",
-                    "status": "pending"
+                    "email": "test@gmail.com",
+                    "password": "password"
                   }
                 }
               }
@@ -91,28 +90,23 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Todo"
+                  "$ref": "#/components/schemas/User"
                 },
                 "examples": {
                   "successResponse": {
-                    "summary": "A successful response after adding a todo",
-                    "value": {
-                      "id": 1,
-                      "userId": 1,
-                      "title": "Buy groceries",
-                      "status": "pending"
-                    }
+                    "summary": "A successful response after adding a user",
+                    "value": "<a valid token>"
                   }
                 }
               }
             }
           },
           "400": {
-            "description": "Invalid Todo",
+            "description": "Invalid User",
             "content": {}
           },
           "404": {
-            "description": "Todo Not Found",
+            "description": "User Not Found",
             "content": {}
           },
           "500": {
@@ -122,9 +116,9 @@
         }
       },
       "get": {
-        "summary": "List of Todos",
-        "description": "Returns all todos",
-        "operationId": "getTodos",
+        "summary": "List of Users",
+        "description": "Returns all users",
+        "operationId": "getUsers",
         "parameters": [],
         "responses": {
           "200": {
@@ -132,7 +126,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Todo"
+                  "$ref": "#/components/schemas/User"
                 }
               }
             }
@@ -142,30 +136,29 @@
             "content": {}
           },
           "404": {
-            "description": "Todo not found",
+            "description": "User not found",
             "content": {}
           }
         }
       },
       "put": {
-        "summary": "Update a Todo",
-        "description": "Returns a single todo",
-        "operationId": "updateTodo",
+        "summary": "Update a User",
+        "description": "Returns a single user",
+        "operationId": "updateUser",
         "requestBody": {
-          "description": "update a Todo",
+          "description": "update a User",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Todo"
+                "$ref": "#/components/schemas/User"
               },
               "examples": {
                 "validPayload": {
-                  "summary": "A valid payload for updating a todo",
+                  "summary": "A valid payload for updating a user",
                   "value": {
                     "id": 1,
-                    "userId": 1,
-                    "title": "Buy groceries",
-                    "status": "pending"
+                    "email": "test@gmail.com",
+                    "password": "password"
                   }
                 }
               }
@@ -179,16 +172,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Todo"
+                  "$ref": "#/components/schemas/User"
                 },
                 "examples": {
                   "successResponse": {
-                    "summary": "A successful response after adding a todo",
+                    "summary": "A successful response after adding a user",
                     "value": {
                       "id": 1,
-                      "userId": 1,
-                      "title": "Buy groceries",
-                      "status": "pending"
+                      "email": "test@gmail.com",
+                      "password": "password",
+                      "createdAt": "2025-02-27T10:48:06.936Z",
+                      "updatedAt": "2025-02-27T10:51:25.623Z"
                     }
                   }
                 }
@@ -196,11 +190,11 @@
             }
           },
           "400": {
-            "description": "Invalid Todo",
+            "description": "Invalid User",
             "content": {}
           },
           "404": {
-            "description": "Todo Not Found",
+            "description": "User Not Found",
             "content": {}
           },
           "500": {
@@ -210,16 +204,73 @@
         }
       }
     },
-    "/todo/{id}": {
+    "/user/login": {
+      "post": {
+        "summary": "login as a User",
+        "description": "Returns a toke",
+        "operationId": "loginUser",
+        "requestBody": {
+          "description": "Login as a User",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "validPayload": {
+                  "summary": "A valid payload for login as a user",
+                  "value": {
+                    "email": "test@gmail.com",
+                    "password": "password"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "successResponse": {
+                    "summary": "A successful response after adding a user",
+                    "value": "<a valid token>"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid User",
+            "content": {}
+          },
+          "404": {
+            "description": "User Not Found",
+            "content": {}
+          },
+          "500": {
+            "description": "Unknown error occurred",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/user/{id}": {
       "delete": {
-        "summary": "Delete a Todo by ID",
-        "description": "Deletes a todo associated with the given ID",
-        "operationId": "deleteTodo",
+        "summary": "Delete a User by ID",
+        "description": "Deletes a user associated with the given ID",
+        "operationId": "deleteUser",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "ID of the todo that should be deleted",
+            "description": "ID of the user that should be deleted",
             "required": true,
             "schema": {
               "type": "integer"
@@ -228,11 +279,11 @@
         ],
         "responses": {
           "200": {
-            "description": "Todo deleted successfully",
+            "description": "User deleted successfully",
             "content": {}
           },
           "404": {
-            "description": "Todo not found",
+            "description": "User not found",
             "content": {}
           },
           "500": {
@@ -245,7 +296,7 @@
   },
   "components": {
     "schemas": {
-      "Todo": {
+      "User": {
         "type": "object",
         "required": ["userId", "title", "status"],
         "properties": {
