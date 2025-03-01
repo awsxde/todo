@@ -55,7 +55,12 @@ export function assertUpdateUserIsValid(updateUserRequest: updateUserDTO) {
       false
     );
   }
-  const isValid = validationSchema(updateUserRequest);
+
+  const isValid =
+    validationSchema(updateUserRequest) &&
+    isStrongPassword(updateUserRequest.password) &&
+    isValidEmail(updateUserRequest.email);
+
   if (!isValid) {
     throw new AppError('invalid-user', `Validation failed`, 400, false);
   }
