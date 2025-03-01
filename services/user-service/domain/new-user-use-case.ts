@@ -40,7 +40,7 @@ export async function loginUser(credentials: loginUserDTO) {
   const isPasswordValid = credentials.password === user!.password;
 
   if (!isPasswordValid) {
-    throw new AppError('invalid-password', `invalid password`, 401, false);
+    throw new AppError('invalid-password', `invalid password`, 400, false);
   }
 
   const token = signValidToken(user, 'user');
