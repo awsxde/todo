@@ -26,7 +26,7 @@ export async function addUser(newUser: addUserDTO) {
 
 export async function updateUser(user: updateUserDTO) {
   assertUpdateUserIsValid(user);
-  await assertEmailExists(user.email);
+  await assertIdExists(user.id);
   const finalUserToSave = { ...user };
   const response = await userRepository.updateUser(finalUserToSave);
 
