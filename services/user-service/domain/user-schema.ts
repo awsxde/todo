@@ -12,4 +12,4 @@ export type addUserDTO = Static<typeof addUserSchema>;
 
 export type updateUserDTO = Static<typeof userSchema>;
 
-export type loginUserDTO = Static<typeof userSchema>;
+export type loginUserDTO = Static<typeof addUserSchema>;
