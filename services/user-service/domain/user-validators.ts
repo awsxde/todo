@@ -1,6 +1,8 @@
 import { AppError } from '@practica/error-handling';
 import ajv from '@practica/validation';
 import { ValidateFunction } from 'ajv';
+import { isValidEmail } from './email-validation';
+import { isStrongPassword } from './password-validation';
 import {
   addUserDTO,
   addUserSchema,
@@ -25,9 +27,14 @@ export function assertNewUserIsValid(newUserRequest: addUserDTO) {
       false
     );
   }
-  const isValid = validationSchema(newUserRequest);
+
+  const isValid =
+    validationSchema(newUserRequest) &&
+    isStrongPassword(newUserRequest.password) &&
+    isValidEmail(newUserRequest.email);
+
   if (!isValid) {
-    throw new AppError('invalid-user', `Validation failed`, 400, true);
+    throw new AppError('invalid-user', `Validation failed`, 400, false);
   }
 }
 
@@ -48,9 +55,14 @@ export function assertUpdateUserIsValid(updateUserRequest: updateUserDTO) {
       false
     );
   }
-  const isValid = validationSchema(updateUserRequest);
+
+  const isValid =
+    validationSchema(updateUserRequest) &&
+    isStrongPassword(updateUserRequest.password) &&
+    isValidEmail(updateUserRequest.email);
+
   if (!isValid) {
-    throw new AppError('invalid-user', `Validation failed`, 400, true);
+    throw new AppError('invalid-user', `Validation failed`, 400, false);
   }
 }
 
@@ -73,6 +85,6 @@ export function assertLoginUserIsValid(credentials: loginUserDTO) {
   }
   const isValid = validationSchema(credentials);
   if (!isValid) {
-    throw new AppError('invalid-password', `Validation failed`, 400, true);
+    throw new AppError('invalid-password', `Validation failed`, 400, false);
   }
 }
