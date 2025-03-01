@@ -45,7 +45,7 @@ describe('/api', () => {
     test('When updating a user, Then should get back approval with 200 response', async () => {
       // Arrange
       const userToAdd = {
-        email: 'test401@gmail.com',
+        email: testHelpers.generateValidEmail(),
         password: 'StrongPass123!',
       };
 
@@ -57,7 +57,7 @@ describe('/api', () => {
       // Arrange
       const userToUpdate = {
         id: addedUserId,
-        email: 'test401@gmail.com1',
+        email: testHelpers.generateValidEmail(),
         password: 'StrongPass123!1',
       };
 
@@ -73,7 +73,7 @@ describe('/api', () => {
     test('When updating a new valid user, Then should be able to retrieve it', async () => {
       // Arrange
       const userToAdd = {
-        email: 'test402@gmail.com',
+        email: testHelpers.generateValidEmail(),
         password: 'StrongPass123!',
       };
 
@@ -85,7 +85,7 @@ describe('/api', () => {
       // Arrange
       const userToUpdate = {
         id: addedUserId,
-        email: 'test402@gmail.com',
+        email: testHelpers.generateValidEmail(),
         password: 'StrongPass123!',
       };
 
@@ -113,7 +113,7 @@ describe('/api', () => {
       // Arrange
       const userToUpdate = {
         id: -1,
-        email: 'test403@gmail.com',
+        email: testHelpers.generateValidEmail(),
         password: 'StrongPass123!',
       };
 
@@ -128,7 +128,7 @@ describe('/api', () => {
       test('should return 200 when user password meets strong password requirements', async () => {
         // Arrange
         const userToAdd = {
-          email: 'test404@gmail.com',
+          email: testHelpers.generateValidEmail(),
           password: 'StrongPass123!',
         };
 
@@ -140,7 +140,7 @@ describe('/api', () => {
         // Arrange
         const userToUpdate = {
           id: addedUserId,
-          email: 'test404@gmail.com1',
+          email: testHelpers.generateValidEmail(),
           password: 'StrongPass123!1',
         };
 
@@ -157,7 +157,7 @@ describe('/api', () => {
       test('should return 400 when user password does not meet strong password requirements', async () => {
         // Arrange
         const userToAdd = {
-          email: 'test405@gmail.com',
+          email: testHelpers.generateValidEmail(),
           password: 'StrongPass123!',
         };
 
@@ -169,7 +169,7 @@ describe('/api', () => {
         // Arrange
         const userToUpdate = {
           id: addedUserId,
-          email: 'test405@gmail.com1',
+          email: testHelpers.generateValidEmail(),
           password: 'weak',
         };
 
@@ -188,7 +188,7 @@ describe('/api', () => {
       test('should return 200 when user email meets a valid email requirements', async () => {
         // Arrange
         const userToAdd = {
-          email: 'test406@gmail.com',
+          email: testHelpers.generateValidEmail(),
           password: 'StrongPass123!',
         };
 
@@ -200,7 +200,7 @@ describe('/api', () => {
         // Arrange
         const userToUpdate = {
           id: addedUserId,
-          email: 'test406@gmail.com1',
+          email: testHelpers.generateValidEmail(),
           password: 'StrongPass123!1',
         };
 
@@ -217,7 +217,7 @@ describe('/api', () => {
       test('should return 400 when user email does not meet a valid email email requirements', async () => {
         // Arrange
         const userToAdd = {
-          email: 'test407@gmail.com',
+          email: testHelpers.generateValidEmail(),
           password: 'StrongPass123!',
         };
 

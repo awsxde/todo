@@ -45,7 +45,7 @@ describe('/api', () => {
     test('When adding a new valid user, Then should get back approval with 200 response', async () => {
       // Arrange
       const userToAdd = {
-        email: 'test301@gmail.com',
+        email: testHelpers.generateValidEmail(),
         password: 'StrongPass123!',
       };
 
@@ -65,7 +65,7 @@ describe('/api', () => {
     test('When adding a new valid user, Then should be able to retrieve it', async () => {
       // Arrange
       const userToAdd = {
-        email: 'test302@gmail.com',
+        email: testHelpers.generateValidEmail(),
         password: 'StrongPass123!',
       };
 
@@ -90,7 +90,7 @@ describe('/api', () => {
     test('When user exist, throw error on sign up', async () => {
       // Arrange
       const userToAdd = {
-        email: 'test303@gmail.com',
+        email: testHelpers.generateValidEmail(),
         password: 'StrongPass123!',
       };
 
@@ -106,7 +106,7 @@ describe('/api', () => {
       test('should return 200 when user password meets strong password requirements', async () => {
         // Arrange
         const userToAdd = {
-          email: 'test304@gmail.com',
+          email: testHelpers.generateValidEmail(),
           password: 'StrongPass123!',
         };
 
@@ -123,7 +123,7 @@ describe('/api', () => {
       test('should return 400 when user password does not meet strong password requirements', async () => {
         // Arrange
         const userToAdd = {
-          email: 'test305@gmail.com',
+          email: testHelpers.generateValidEmail(),
           password: 'weak',
         };
 
@@ -142,7 +142,7 @@ describe('/api', () => {
       test('should return 200 when user email meets a valid email requirements', async () => {
         // Arrange
         const userToAdd = {
-          email: 'test306@gmail.com',
+          email: testHelpers.generateValidEmail(),
           password: 'StrongPass123!',
         };
 

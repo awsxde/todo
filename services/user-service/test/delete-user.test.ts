@@ -43,7 +43,7 @@ describe('/api', () => {
     test('When deleting an existing user, Then it should NOT be retrievable', async () => {
       // Arrange
       const userToAdd = {
-        email: 'test201@gmail.com',
+        email: testHelpers.generateValidEmail(),
         password: 'StrongPass123!',
       };
 

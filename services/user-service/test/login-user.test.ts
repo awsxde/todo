@@ -44,7 +44,7 @@ describe('/api', () => {
     test('When asked for an existing user, Then should receive 200 response', async () => {
       // Arrange
       const userToAdd = {
-        email: 'test501@gmail.com',
+        email: testHelpers.generateValidEmail(),
         password: 'StrongPass123!',
       };
 
@@ -61,13 +61,15 @@ describe('/api', () => {
 
     test('When asked for an existing user with wrong password, Then should receive 400 response', async () => {
       // Arrange
+      const newUserEmail = testHelpers.generateValidEmail();
+
       const userToAdd = {
-        email: 'test502@gmail.com',
+        email: newUserEmail,
         password: 'StrongPass123!',
       };
 
       const userToLogin = {
-        email: 'test502@gmail.com',
+        email: newUserEmail,
         password: 'invalid password',
       };
 

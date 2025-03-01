@@ -44,7 +44,7 @@ describe('/api', () => {
     test('When asked for an existing user, Then should retrieve it and receive 200 response', async () => {
       // Arrange
       const userToAdd = {
-        email: 'test101@gmail.com',
+        email: testHelpers.generateValidEmail(),
         password: 'StrongPass123!',
       };
 
