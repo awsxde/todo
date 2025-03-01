@@ -31,12 +31,6 @@ beforeEach(() => {
   // ️️️✅ Best Practice: Start each test with a clean slate
   nock.cleanAll();
   sinon.restore();
-
-  nock('http://localhost/user/').get(`/1`).reply(200, {
-    id: 1,
-    name: 'John',
-    terms: 45,
-  });
 });
 
 afterAll(async () => {
