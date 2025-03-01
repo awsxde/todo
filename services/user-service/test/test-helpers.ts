@@ -1,5 +1,6 @@
-import jwt from 'jsonwebtoken';
+import { faker } from '@faker-js/faker/locale/en';
 import axios from 'axios';
+import jwt from 'jsonwebtoken';
 
 export const getAxiosInstance = (address) => {
   const axiosConfig = {
@@ -45,3 +46,8 @@ function internalSignTokenSynchronously(user, roles, expirationInUnixTime) {
 }
 
 export const exampleSecret = 'just-a-default-secret';
+
+// Helper function to generate a valid email
+export function generateValidEmail() {
+  return faker.internet.email();
+}
