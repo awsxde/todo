@@ -6,8 +6,3 @@ export async function getUser(userId: number) {
   const response = await userRepository.getUserById(userId);
   return response;
 }
-
-export async function getUsers() {
-  const response = await userRepository.getUsers();
-  return response;
-}

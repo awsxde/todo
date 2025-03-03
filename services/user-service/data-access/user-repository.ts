@@ -46,17 +46,12 @@ export async function getUserById(id: number) {
   return resultUser;
 }
 
-export async function getUsers() {
-  const resultUser = await getPrismaClient().user.findMany();
-
-  return resultUser;
-}
-
 export async function deleteUser(userIdToDelete: number) {
   const deleteResult = await getPrismaClient().user.delete({
     where: {
       id: userIdToDelete,
     },
   });
+
   return deleteResult;
 }
