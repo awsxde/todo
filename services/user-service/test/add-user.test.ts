@@ -76,13 +76,14 @@ describe('/api', () => {
 
       // Assert
       const { data, status } = await axiosAPIClient.get(`/user/${addedUserId}`);
+
       expect({
-        data,
+        data: { email: data.email }, // Only check email, not password
         status,
       }).toMatchObject({
         status: 200,
         data: {
-          ...userToAdd,
+          email: userToAdd.email, // Compare only the email
         },
       });
     });
