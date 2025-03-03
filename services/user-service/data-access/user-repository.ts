@@ -60,8 +60,3 @@ export async function deleteUser(userIdToDelete: number) {
   });
   return deleteResult;
 }
-
-export async function cleanupData() {
-  const deleteResult = await getPrismaClient().user.deleteMany();
-  return deleteResult;
-}
