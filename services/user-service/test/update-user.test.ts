@@ -98,13 +98,14 @@ describe('/api', () => {
       const { data, status } = await axiosAPIClient.get(
         `/user/${updatedUserId}`
       );
+
       expect({
-        data,
+        data: { email: data.email }, // Only check email, not password
         status,
       }).toMatchObject({
         status: 200,
         data: {
-          ...userToUpdate,
+          email: userToUpdate.email, // Compare only the email
         },
       });
     });

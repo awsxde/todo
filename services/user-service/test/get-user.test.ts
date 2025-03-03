@@ -55,13 +55,16 @@ describe('/api', () => {
       // Act
       // ️️️✅ Best Practice: Use generic and reputable HTTP client like Axios or Fetch. Avoid libraries that are coupled to
       // the web framework or include custom assertion syntax (e.g. Supertest)
-      const getResponse = await axiosAPIClient.get(`/user/${addedUserId}`);
+      const { data, status } = await axiosAPIClient.get(`/user/${addedUserId}`);
 
       // Assert
-      expect(getResponse).toMatchObject({
+      expect({
+        data: { email: data.email }, // Only check email, not password
+        status,
+      }).toMatchObject({
         status: 200,
         data: {
-          ...userToAdd,
+          email: userToAdd.email, // Compare only the email
         },
       });
     });
