@@ -1,12 +1,13 @@
 import { AppError } from '@practica/error-handling';
+import bcrypt from 'bcrypt';
 
-export function throwIfPasswordIncorrect(
-  password: string,
+export async function verifyPasswordOrThrow(
+  plainPassword: string,
   hashedPassword: string
 ) {
-  const isPasswordCorrect = password === hashedPassword;
+  const isMatch = await bcrypt.compare(plainPassword, hashedPassword);
 
-  if (!isPasswordCorrect) {
-    throw new AppError('invalid-password', `invalid password`, 400, false);
+  if (!isMatch) {
+    throw new AppError('invalid-password', 'Invalid password', 400, false);
   }
 }
