@@ -1,0 +1,323 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "User",
+    "description": "This is the API docs of the user API.",
+    "termsOfService": "http://swagger.io/terms/",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001",
+      "description": "Local development server"
+    }
+  ],
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "paths": {
+    "/user/{userId}": {
+      "get": {
+        "summary": "Find a User by ID",
+        "description": "Returns a single user",
+        "operationId": "getUserById",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "ID of user to return",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID",
+            "content": {}
+          },
+          "404": {
+            "description": "User not found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "summary": "Add a new User",
+        "description": "Returns a single user",
+        "operationId": "addUser",
+        "requestBody": {
+          "description": "New User To Add",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "validPayload": {
+                  "summary": "A valid payload for adding a new user",
+                  "value": {
+                    "email": "test@gmail.com",
+                    "password": "password"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "successResponse": {
+                    "summary": "A successful response after adding a user",
+                    "value": "<a valid token>"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid User",
+            "content": {}
+          },
+          "404": {
+            "description": "User Not Found",
+            "content": {}
+          },
+          "500": {
+            "description": "Unknown error occurred",
+            "content": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "List of Users",
+        "description": "Returns all users",
+        "operationId": "getUsers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID",
+            "content": {}
+          },
+          "404": {
+            "description": "User not found",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a User",
+        "description": "Returns a single user",
+        "operationId": "updateUser",
+        "requestBody": {
+          "description": "update a User",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "validPayload": {
+                  "summary": "A valid payload for updating a user",
+                  "value": {
+                    "id": 1,
+                    "email": "test@gmail.com",
+                    "password": "password"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "successResponse": {
+                    "summary": "A successful response after adding a user",
+                    "value": {
+                      "id": 1,
+                      "email": "test@gmail.com",
+                      "password": "password",
+                      "createdAt": "2025-02-27T10:48:06.936Z",
+                      "updatedAt": "2025-02-27T10:51:25.623Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid User",
+            "content": {}
+          },
+          "404": {
+            "description": "User Not Found",
+            "content": {}
+          },
+          "500": {
+            "description": "Unknown error occurred",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/user/login": {
+      "post": {
+        "summary": "login as a User",
+        "description": "Returns a toke",
+        "operationId": "loginUser",
+        "requestBody": {
+          "description": "Login as a User",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "validPayload": {
+                  "summary": "A valid payload for login as a user",
+                  "value": {
+                    "email": "test@gmail.com",
+                    "password": "password"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "successResponse": {
+                    "summary": "A successful response after adding a user",
+                    "value": "<a valid token>"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid User",
+            "content": {}
+          },
+          "404": {
+            "description": "User Not Found",
+            "content": {}
+          },
+          "500": {
+            "description": "Unknown error occurred",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "delete": {
+        "summary": "Delete a User by ID",
+        "description": "Deletes a user associated with the given ID",
+        "operationId": "deleteUser",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the user that should be deleted",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User deleted successfully",
+            "content": {}
+          },
+          "404": {
+            "description": "User not found",
+            "content": {}
+          },
+          "500": {
+            "description": "Unknown error occurred",
+            "content": {}
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "required": ["userId", "title", "status"],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "title": {
+            "type": "string",
+            "format": "string"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status": {
+            "type": "string",
+            "format": "string"
+          }
+        }
+      }
+    }
+  }
+}
