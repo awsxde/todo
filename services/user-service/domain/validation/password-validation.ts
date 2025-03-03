@@ -1,4 +1,4 @@
-export const isStrongPassword = (password: string) => {
+export function isStrongPassword(password: string) {
   const minLength = 8;
   const hasUpperCase = /[A-Z]/.test(password);
   const hasLowerCase = /[a-z]/.test(password);
@@ -14,4 +14,4 @@ export const isStrongPassword = (password: string) => {
     hasNumbers &&
     hasSpecialChars
   );
-};
+}
