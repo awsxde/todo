@@ -50,23 +50,6 @@ export default function defineRoutes(expressApp: express.Application) {
     }
   });
 
-  // get existing todos
-  router.get('/', async (req, res, next) => {
-    try {
-      logger.info(`Todo API was called to get todos`);
-      const result = await newTodoUseCase.getTodos();
-
-      if (!result) {
-        res.status(404).end();
-        return;
-      }
-
-      res.json(result);
-    } catch (error) {
-      next(error);
-    }
-  });
-
   // delete todo by id
   router.delete('/:id', async (req, res) => {
     logger.info(`Todo API was called to delete todo ${req.params.id}`);
