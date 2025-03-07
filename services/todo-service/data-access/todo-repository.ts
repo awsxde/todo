@@ -51,8 +51,3 @@ export async function deleteTodo(todoIdToDelete: number) {
   });
   return deleteResult;
 }
-
-export async function cleanupData() {
-  const deleteResult = await getPrismaClient().todo.deleteMany();
-  return deleteResult;
-}
