@@ -3,6 +3,7 @@ import express from 'express';
 import util from 'util';
 import { addUser } from '../../domain/use-case/add-user-use-case';
 import { deleteUser } from '../../domain/use-case/delete-user-use-case';
+import { getUserByEmail } from '../../domain/use-case/get-user-by-email-use-case';
 import { getUser } from '../../domain/use-case/get-user-use-case';
 import { updateUser } from '../../domain/use-case/update-user-use-case';
 
@@ -41,6 +42,25 @@ export default function defineRoutes(expressApp: express.Application) {
     try {
       logger.info(`User API was called to get user by id ${req.params.id}`);
       const result = await getUser(parseInt(req.params.id, 10));
+
+      if (!result) {
+        res.status(404).end();
+        return;
+      }
+
+      res.json(result);
+    } catch (error) {
+      next(error);
+    }
+  });
+
+  // get existing user by email
+  router.get('/email/:email', async (req, res, next) => {
+    try {
+      logger.info(
+        `User API was called to get user by email ${req.params.email}`
+      );
+      const result = await getUserByEmail(req.params.email);
 
       if (!result) {
         res.status(404).end();
