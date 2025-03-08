@@ -1,13 +1,14 @@
 import { AppError } from '@practica/error-handling';
 import axios from 'axios';
 
-export async function assertUserExists(userId: number) {
+export async function throwIfUserNotExists(userId: number) {
   const userVerificationRequest = await axios.get(
-    `http://localhost/user/${userId}`,
+    `http://localhost:3010/user/${userId}`,
     {
       validateStatus: () => true,
     }
   );
+
   if (userVerificationRequest.status !== 200) {
     throw new AppError(
       'user-does-not-exist',
@@ -16,6 +17,4 @@ export async function assertUserExists(userId: number) {
       true
     );
   }
-
-  return userVerificationRequest.data;
 }
