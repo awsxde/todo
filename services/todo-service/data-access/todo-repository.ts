@@ -37,22 +37,11 @@ export async function getTodoById(id: number) {
   return resultTodo;
 }
 
-export async function getTodos() {
-  const resultTodo = await getPrismaClient().todo.findMany();
-
-  return resultTodo;
-}
-
 export async function deleteTodo(todoIdToDelete: number) {
   const deleteResult = await getPrismaClient().todo.delete({
     where: {
       id: todoIdToDelete,
     },
   });
-  return deleteResult;
-}
-
-export async function cleanupData() {
-  const deleteResult = await getPrismaClient().todo.deleteMany();
   return deleteResult;
 }
